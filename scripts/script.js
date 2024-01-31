@@ -1,22 +1,26 @@
-// 'use strict';
+'use strict';
 
 window.addEventListener('load', () => {
+    
     //Här kickar ni igång ert program
     //eventlyssnare som reagerar på 'Play game'-knappen och returnerar TRUE när validateLogin är true.
-    document.querySelector('#spela').addEventListener('click', playGame){
-    validateLogin()
-    }
+    //document.querySelector('#spela').addEventListener('click', playGame)
+    //funktion playGame();
     
     
-
-        //funktion playGame();
-        
-
 });
 
-function playGame() {
-    console.log('hepp!')
-}
+//function playGame() {
+//    validateLogin(),
+//    console.log('hepp!')
+//let playBtnRef = document.querySelector('#spela');
+
+//playBtnRef.addEventListener('click,', (event) => {
+//    event.preventDefault();
+//    console.log('klick på knappen!')
+    
+//})
+//}
 
 
 function validateLogin() {
