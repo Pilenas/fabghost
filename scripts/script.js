@@ -1,12 +1,23 @@
-'use strict';
+// 'use strict';
 
 window.addEventListener('load', () => {
     //Här kickar ni igång ert program
-    //validateLogin();
-    //startaSpelet();
+    //eventlyssnare som reagerar på 'Play game'-knappen och returnerar TRUE när validateLogin är true.
+    document.querySelector('#spela').addEventListener('click', playGame){
+    validateLogin()
+    }
+    
+    
+
+        //funktion playGame();
+        
+
 });
 
-//funktion för validate login
+function playGame() {
+    console.log('hepp!')
+}
+
 
 function validateLogin() {
     try {
@@ -20,32 +31,36 @@ function validateLogin() {
                 'msg' : 'No such username!',
             }            
         } else {
-            //const user = users.find(user => userNameRef.value)
+            const user = users.find(user => userNameRef.value)
             
             if(user.password !== passwordRef.value) {
                 throw {
                     'nodeRef' : passwordRef,
                     'msg' : 'Please, check your password!',
                 }
-            } else { if(checkFear() === 'false'){
-                'msg' : 'This is no place for a chicken like you!',
-
-            }
-                
-            }
-        }
+            }   else { 
+                    if(checkFear() === false){
+                        throw {
+                        'nodeRef' : document.querySelector('#question'),
+                        'msg' : 'This is no place for a chicken like you!',
+                        }
+                    }
+                }
         return true;
+    }
         
     } catch(error) {
-        console.log(error.msg);
+        // console.log(error.msg);
         error.nodeRef.value = '';
         error.nodeRef.focus();
-        topMsg.textContent = error.msg;
+        msg.textContent = error.msg;
         return false;
         
         
     }
 }
+
+
 checkFear();
 function checkFear() {
     const checkbox = document.querySelector('#question');
