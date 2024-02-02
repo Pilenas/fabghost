@@ -7,11 +7,33 @@ window.addEventListener('load', () => {
     playBtnRef.addEventListener('click', (event) => {
         event.preventDefault();
         if(validateLogin()) {
-            //Här startar vi spelet med en function som heter playgame?
+            //Här sätter vi upp spelplanen med en function som heter gameFieldInit
+            gameFieldInit();
         }
     });
            
 });
+
+function gameFieldInit() {
+// en for-loop som genererar femton spöken på random platser
+// i form av image-objekt (som namnges ghostOne etc???) som sedan kan byta bild mha toggle 
+// som triggas av att musen passerar objektet
+// när femton spöken placerats anropas playGame() och spelet börjar.
+//
+//FRÅGOR: kan scriptet  manipulera style.css och skriva in femton olika namn/id för positionering av varje unikt object?
+// Kan vi skapa spökena som objects i en array i oGameData, och använda de objecten för att manipulera DOMen? Vad ska
+// då objecten som vi skapar i HTML-filen vara eftersom vi vill byta bild på dem? Ska de vara img<> eller något annat?
+
+
+}
+
+function playGame() {
+// eventlyssnare som när pekaren passerar ett image-objekt togglar objektet så att det byter bildkälla(?).
+// räknare som kontrollerar antal fångade spöken, samt avslutar spelet när antal spöken är noll.
+// Eventuellt räknare som räknar antal toggles för att publicera vid gameOver.
+
+
+}
 
 function validateLogin() {
     try {
