@@ -20,7 +20,7 @@ function gameFieldInit() {
 // som triggas av att musen passerar objektet
 // när femton spöken placerats anropas playGame() och spelet börjar.
 //
-//FRÅGOR: kan scriptet  manipulera style.css och skriva in femton olika namn/id för positionering av varje unikt object?
+//FRÅGOR: kan scriptet manipulera style.css och skriva in femton olika namn/id för positionering av varje unikt object?
 // Kan vi skapa spökena som objects i en array i oGameData, och använda de objecten för att manipulera DOMen? Vad ska
 // då objecten som vi skapar i HTML-filen vara eftersom vi vill byta bild på dem? Ska de vara img<> eller något annat?
 
