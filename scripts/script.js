@@ -1,27 +1,17 @@
 'use strict';
 
 window.addEventListener('load', () => {
-    
     //Här kickar ni igång ert program
     //eventlyssnare som reagerar på 'Play game'-knappen och returnerar TRUE när validateLogin är true.
-    //document.querySelector('#spela').addEventListener('click', playGame)
-    //funktion playGame();
-    
-    
+    const playBtnRef = document.querySelector('#spela');
+    playBtnRef.addEventListener('click', (event) => {
+        event.preventDefault();
+        if(validateLogin()) {
+            //Här startar vi spelet med en function som heter playgame?
+        }
+    });
+           
 });
-
-//function playGame() {
-//    validateLogin(),
-//    console.log('hepp!')
-//let playBtnRef = document.querySelector('#spela');
-
-//playBtnRef.addEventListener('click,', (event) => {
-//    event.preventDefault();
-//    console.log('klick på knappen!')
-    
-//})
-//}
-
 
 function validateLogin() {
     try {
@@ -50,22 +40,19 @@ function validateLogin() {
                         }
                     }
                 }
+        console.log('Inloggning lyckades');
         return true;
     }
         
     } catch(error) {
-        // console.log(error.msg);
+        console.log(error);
         error.nodeRef.value = '';
         error.nodeRef.focus();
         msg.textContent = error.msg;
         return false;
-        
-        
     }
 }
 
-
-checkFear();
 function checkFear() {
     const checkbox = document.querySelector('#question');
     if (checkbox.checked) {
@@ -74,5 +61,3 @@ function checkFear() {
         return false;
     }    
 }
-
-console.log(checkFear());
