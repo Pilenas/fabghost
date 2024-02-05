@@ -16,4 +16,4 @@ let oGameData = {
     top : function() {
         return Math.round(Math.random() * ( window.innerHeight - 300)) + 1;
     }
-};
+}
