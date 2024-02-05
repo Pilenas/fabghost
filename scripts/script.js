@@ -10,14 +10,20 @@ window.addEventListener('load', () => {
         document.querySelector('#formDiv').classList.add('d-none');
 
         //Här sätter vi upp spelplanen med en function som heter gameFieldInit
-        gameFieldInit();
+        createGame();
         //        }                                   *****KOMMENTERAT UT INLOGGNINGEN FÖR ATT SLIPPA GREJA MED DEN HELA TIDEN. TA FRAM DEN SEN!!!***********
     });
 
 });
 
+function createGame() {
+    let totalValue = 0;
+    let toggledCount = 0;
+    let ghosts = Math.floor(Math.random() * 6) + 10;
+    gameFieldInit();
+
+
 function gameFieldInit() {
-    const ghosts = Math.floor(Math.random() * 6) + 10;
 
     const mainElement = document.querySelector("main");
 
@@ -37,13 +43,13 @@ function gameFieldInit() {
 function toggleValue(event) {
     const ghostImage = event.target;
     ghostImage.value ^= 1;
-    let totalValue = 0;
 
     if (ghostImage.value === 1) {
         totalValue += 1;
     } else {
         totalValue -= 1;
     }
+    toggledCount++;
 
     if (ghostImage.value === 1) {
         ghostImage.src = "resources/net.png";
@@ -51,6 +57,19 @@ function toggleValue(event) {
         ghostImage.src = "resources/ghost.png";
     }
     console.log(totalValue)
+    
+    if (totalValue === ghosts) {
+        gameOver(); 
+    }
+}
+    function gameOver() {
+        console.log("Spelet är över!")
+        console.log("Antal spöken berörda:", toggledCount);
+    }
+
+    return {
+        gameFieldInit: gameFieldInit
+    };
 }
 
 
