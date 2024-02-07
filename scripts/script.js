@@ -128,7 +128,7 @@ function restartGame() {
     document.querySelector("#username").value = "";
     document.querySelector("#password").value = "";
     document.querySelector("#question").checked = false;
-    document.querySelector("#username").focus();
     document.querySelector('#msg').textContent = `Grattis! Du fångade alla spöken.`;
     document.querySelector("#formDiv").classList.remove("d-none");
+    document.querySelector("#username").focus();
 }
